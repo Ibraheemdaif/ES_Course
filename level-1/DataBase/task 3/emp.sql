@@ -1,0 +1,17 @@
+SELECT * FROM employees WHERE emp_id BETWEEN 100 AND 105;
+SELECT * FROM employees WHERE emp_id IN (151, 152, 153, 154, 155);
+SELECT * FROM employees WHERE LOWER(first_name) LIKE 'p%';
+SELECT * FROM employees WHERE LOWER(first_name) LIKE '%a';
+SELECT * FROM employees WHERE LOWER(first_name) LIKE '%a%';
+SELECT * FROM employees WHERE LOWER(first_name) LIKE '__e%';
+SELECT * FROM employees WHERE manager_id IS NULL;
+SELECT * FROM employees WHERE manager_id IS NOT NULL;
+INSERT INTO employees (emp_id, first_name, last_name, manager_id) VALUES (200, 'Ahmed', 'Ali', NULL);
+SELECT * FROM employees WHERE job_id IN ('AD_VP', 'IT_PROG');
+SELECT * FROM employees ORDER BY last_name ASC;
+SELECT * FROM employees ORDER BY hire_date DESC;
+SELECT * FROM employees ORDER BY department_id ASC, salary DESC;
+SELECT emp_id, first_name, LOWER(last_name) AS last_name_lower FROM employees;
+SELECT emp_id, UPPER(first_name) AS first_name_upper, last_name FROM employees;
+SELECT emp_id, INITCAP(first_name) AS first_name_title, INITCAP(last_name) AS last_name_title FROM employees;
+SELECT * FROM employees WHERE LOWER(last_name) = 'smith';
